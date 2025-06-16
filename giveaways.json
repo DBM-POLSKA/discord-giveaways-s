@@ -1,0 +1,24 @@
+{
+  "1131111111": [
+    {
+      "giveaway_full_id": "3333332333_2025-06-16T02-10-36-428Z",
+      "giveaway_id": "0039836428",
+      "guild_id": 1131111111,
+      "channel_id": 222222222,
+      "message_id": 3333332333,
+      "host_id": 444444444,
+      "prize": "vip",
+      "description": "opis",
+      "number_of_winners": 1,
+      "members": [],
+      "winners": [],
+      "new_winners": [],
+      "min_members": 1,
+      "max_members": 5,
+      "timestamp": "2025-06-16T02:10:36.428Z",
+      "end_timestamp": "2025-06-16T02:11:06.428Z",
+      "status": "ended",
+      "ended_at": "2025-06-16T02:11:06.761Z"
+    }
+  ]
+}

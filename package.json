@@ -1,0 +1,24 @@
+{
+  "name": "discord-giveaways-s",
+  "author": "Shadow",
+  "description": "Advanced module for creating and managing giveaways in Discord bots.",
+  "main": "lib/index.js",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DBM-POLSKA/discord-giveaways-s"
+  },
+  "bugs": {
+    "url": "https://discord.gg/9HYB4n3Dz4"
+  },
+  "keywords": [
+    "nodejs",
+    "npm",
+    "github",
+    "discord",
+    "giveaway",
+    "bot",
+    "discord-giveaways-s"
+  ]
+}
