@@ -1,7 +1,10 @@
+<p align="center">
+<img src="https://media.discordapp.net/attachments/1301409004248891443/1384015200310788157/discord-giveaways-s.png?ex=6850e419&is=684f9299&hm=f4f1a5abe65f9a1c789c27827566c1c9a0274e31e398883d5e7936c373a4715f&=&format=webp&quality=lossless&width=550&height=127" width="800" alt="discord-giveaways-s" />
+</p>
+
 ![npm](https://img.shields.io/npm/v/discord-giveaways-s?color=brightgreen&label=npm)
 [![Discord](https://img.shields.io/discord/1301396266479124501?label=discord)](https://discord.gg/9HYB4n3Dz4)
 ![license](https://img.shields.io/github/license/DBM-POLSKA/discord-giveaways-s?color=orange)
-
 
 # Info
 The **discord-giveaways-s** module is compatible with discord.js v13 and v14.
