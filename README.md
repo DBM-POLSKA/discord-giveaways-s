@@ -1,3 +1,8 @@
+![npm](https://img.shields.io/npm/v/discord-giveaways-s?color=brightgreen&label=npm)
+[![Discord](https://img.shields.io/discord/1301396266479124501?label=discord)](https://discord.gg/9HYB4n3Dz4)
+![license](https://img.shields.io/github/license/DBM-POLSKA/discord-giveaways-s?color=orange)
+
+
 # Info
 The **discord-giveaways-s** module is compatible with discord.js v13 and v14.
 
