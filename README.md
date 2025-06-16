@@ -1,348 +1,215 @@
-<<<<<<< HEAD
-# Installation
+# Info
+The **discord-giveaways-s** module is compatible with discord.js v13 and v14.
 
-Use NPM <br>
-`npm install better-console-s`
-
-# Usage
-
-```
-const betterConsole = require("better-console-s");
-
-const output = betterConsole("test 123", {
-  borderStyle: "single",
-});
-
-console.log(output);
-```
-
-# Colors
-
-You can set `textColor` (text color), `borderColor` (border color), `backgroundColor` (background color), `color` (general color). <br>
-When you enter a color, you can enter either the color hex or the color name.
-A list of all colors can be found in the Styles tab.
-
-```
-const betterConsole = require("better-console-s");
-
-const output = betterConsole("test 123", {
-  borderStyle: "single",
-
-  color: "red",
-});
-
-console.log(output);
-```
-
-or
-
-```
-const betterConsole = require("better-console-s");
-
-const output = betterConsole("test 123", {
-  borderStyle: "single",
-
-  textColor: "red",
-  borderColor: "blue",
-});
-
-console.log(output);
-```
-
-# Borders
-
-You can set the border via `borderStyle` (instead of the frame name you can enter null, then the border will not be displayed). <br>
-A list of all frames can be found in the Styles tab.
-
-```
-const betterConsole = require("better-console-s");
-
-const output = betterConsole("test 123", {
-  borderStyle: "single",
-});
-
-console.log(output);
-```
-
-# Spacing
-
-You can set the spacing using: `margin`, `padding` or `marginTop`, `marginBottom`, `marginLeft`, `marginRight`, `paddingTop`, `paddingBottom`, `paddingLeft`, `paddingRight`.
-
-```
-const betterConsole = require("better-console-s");
-
-const output = betterConsole("test 123", {
-  borderStyle: "single",
-
-  margin: 2,
-  padding: 1,
-});
-
-console.log(output);
-```
-
-or
-
-```
-const betterConsole = require("better-console-s");
-
-const output = betterConsole("test 123", {
-  borderStyle: "single",
-
-  marginTop: 2,
-  paddingBottom: 1,
-
-  paddingTop: 3,
-  paddingLeft: 1,
-  ...
-});
-
-console.log(output);
-```
-
-# Styles
-
-**Configuration Options:**
-
-- borderStyle
-- color
-- backgroundColor
-- textColor
-- borderColor
-- margin
-- padding
-- marginTop
-- marginBottom
-- marginLeft
-- marginRight
-- paddingTop
-- paddingBottom
-- paddingLeft
-- paddingRight
-- newLine
-
-**Borders:**
-
-- null
-- single
-- double
-- bold
-- extraBold
-- block
-- rounded
-- doubleRounded
-- ascii
-- dashed
-- plus
-- minus
-- dotted
-- doubleDotted
-- star
-- arrow
-- braces
-- wave
-- unicodeBox
-- curved
-- roundedDots
-- diamond
-- slashes
-- hashes
-- minimal
-- brackets
-- doubleWithDots
-- waveDouble
-- binary
-- flowers
-
-**Colors:**
-
-- black
-- red
-- green
-- yellow
-- blue
-- magenta
-- cyan
-- white
-- orange
-- purple
-- pink
-- lime
-- teal
-- navy
-- maroon
-- olive
-- silver
-- gold
-- crimson
-- darkorange
-- ...
-
-and all hex colors.
-=======
 # Installation
 Use NPM <br>
-`npm install better-console-s`
+`npm install discord-giveaways-s`
 
-# Usage
+# Giveaway Create
+In message id you need to enter the message id (giveaway message id), then this message can be edited but it is needed to generate the giveaway id.
 ```
-const betterConsole = require("better-console-s");
+const { GiveawayBuilder } = require("discord-giveaways-s");
 
-const output = betterConsole("test 123", {
-  borderStyle: "single",
+let jsonPath = "giveaways.json";
+
+new GiveawayBuilder(jsonPath, {
+  guild_id: 123456789, // optional
+  channel_id: 123456789, // optional
+  message_id: 123456789, // Required to generate giveaway ID!
+  host_id: 123456789, // optional
+  prize: "vip",
+  description: "test", // optional
+  time: "1d", // 1ms / 1s / 1m / 1h / 1d / 1mo / 1ye
+  number_of_winners: 1,
+  min_members: 1, // optional
+  max_members: 5, // optional
 });
-
-console.log(output);
 ```
 
-# Colors
-You can set  `textColor` (text color), `borderColor` (border color), `backgroundColor` (background color), `color` (general color). <br>
-When you enter a color, you can enter either the color hex or the color name.
-A list of all colors can be found in the Styles tab.
+# Giveaway Delete
+Use this to delete a selected giveaway. Instead of entering the giveaway id you can enter all (this will delete all giveaways).
 ```
-const betterConsole = require("better-console-s");
+const { GiveawayDelete } = require("discord-giveaways-s");
 
-const output = betterConsole("test 123", {
-  borderStyle: "single",
+let jsonPath = "giveaways.json";
 
-  color: "red",
+new GiveawayDelete(jsonPath, {
+  giveaway_id: "123456789",
 });
+```
 
-console.log(output);
+# Giveaway Join / Leave
+Using this, the user can join or leave the giveaway.
+```
+const { GiveawayJoin } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+new GiveawayJoin(jsonPath, {
+  giveaway_id: "123456789",
+  member_id: 123456789,
+});
 ```
 or
 ```
-const betterConsole = require("better-console-s");
+const { GiveawayLeave } = require("discord-giveaways-s");
 
-const output = betterConsole("test 123", {
-  borderStyle: "single",
+let jsonPath = "giveaways.json";
 
-  textColor: "red",
-  borderColor: "blue",
+new GiveawayLeave(jsonPath, {
+  giveaway_id: "123456789",
+  member_id: 123456789,
 });
-
-console.log(output);
 ```
 
-# Borders
-You can set the border via `borderStyle` (instead of the frame name you can enter null, then the border will not be displayed). <br>
-A list of all frames can be found in the Styles tab.
+# Giveaway Reroll
+Use this to randomly select new giveaway winners. (if you leave members blank, the number of users that are set by default in the giveaway will be randomly selected).
 ```
-const betterConsole = require("better-console-s");
+const { GiveawayReroll } = require("discord-giveaways-s");
 
-const output = betterConsole("test 123", {
-  borderStyle: "single",
+let jsonPath = "giveaways.json";
+
+new GiveawayReroll(jsonPath, {
+  giveaway_id: "123456789",
+  members: 1,
 });
-
-console.log(output);
-```
-
-# Spacing
-You can set the spacing using:  `margin`, `padding` or `marginTop`, `marginBottom`, `marginLeft`, `marginRight`, `paddingTop`, `paddingBottom`, `paddingLeft`, `paddingRight`.
-```
-const betterConsole = require("better-console-s");
-
-const output = betterConsole("test 123", {
-  borderStyle: "single",
-
-  margin: 2,
-  padding: 1,
-});
-
-console.log(output);
 ```
 or
 ```
-const betterConsole = require("better-console-s");
+const { GiveawayReroll } = require("discord-giveaways-s");
 
-const output = betterConsole("test 123", {
-  borderStyle: "single",
+let jsonPath = "giveaways.json";
 
-  marginTop: 2,
-  paddingBottom: 1,
-
-  paddingTop: 3,
-  paddingLeft: 1,
-  ...
+new GiveawayReroll(jsonPath, {
+  giveaway_id: "123456789",
 });
-
-console.log(output);
 ```
 
-# Styles
+# Giveaway Check Member
+using this you can check if a given user is in a given giveaway.
+```
+const { GiveawayCheckMember } = require("discord-giveaways-s");
 
-**Configuration Options:**
-- borderStyle
-- color
-- backgroundColor
-- textColor
-- borderColor
-- margin
-- padding
-- marginTop
-- marginBottom
-- marginLeft
-- marginRight
-- paddingTop
-- paddingBottom
-- paddingLeft
-- paddingRight
-- newLine
+let jsonPath = "giveaways.json";
 
-**Borders:**
-- null
-- single
-- double
-- bold
-- extraBold
-- block
-- rounded
-- doubleRounded
-- ascii
-- dashed
-- plus
-- minus
-- dotted
-- doubleDotted
-- star
-- arrow
-- braces
-- wave
-- unicodeBox
-- curved
-- roundedDots
-- diamond
-- slashes
-- hashes
-- minimal
-- brackets
-- doubleWithDots
-- waveDouble
-- binary
-- flowers
+const checker = new GiveawayCheckMember(jsonPath, {
+  giveaway_id: "123456789",
+  member_id: "123456789",
+});
 
-**Colors:**
-- black
-- red
-- green
-- yellow
-- blue
-- magenta
-- cyan
-- white
-- orange
-- purple
-- pink
-- lime
-- teal
-- navy
-- maroon
-- olive
-- silver
-- gold
-- crimson
-- darkorange
-- ...
+console.log(checker.result); // true / false
+```
 
-and all hex colors.
->>>>>>> db3cee4ab9ea75f437e482efea440652d6f43b7a
+# Giveaway Info
+This allows you to check various information about the selected giveaway.
+```
+const { GiveawayInfo } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+const info = new GiveawayInfo(jsonPath, {
+  giveaway_id: "123456789",
+  info: "prize",
+});
+
+console.log(info.result);
+```
+Displays all information about the selected giveaway.
+```
+const { GiveawayInfo } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+const info = new GiveawayInfo(jsonPath, {
+  giveaway_id: "123456789",
+});
+
+console.log(info.result);
+```
+Displays all information about all giveaways.
+```
+const { GiveawayInfo } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+const info = new GiveawayInfo(jsonPath, {});
+
+console.log(info.result);
+```
+
+# Giveaway Start
+Used to start a giveaway (changes the giveaway status to active).
+```
+const { GiveawayStart } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+new GiveawayStart(jsonPath, {
+  giveaway_id: "123456789",
+});
+```
+
+# Giveaway Manually End
+Use to manually end a giveaway.
+```
+const { GiveawayEnd } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+new GiveawayEnd(jsonPath, {
+  giveaway_id: "123456789",
+});
+```
+
+# Giveaway Auto End
+Use to automatically end the giveaway.
+```
+const { GiveawayMonitor, GiveawayEnd, GiveawayInfo } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+const monitor = new GiveawayMonitor(jsonPath, 1000, (gId) => {
+  new GiveawayEnd(jsonPath, {
+    giveaway_id: id,
+  });
+  console.log(`Giveaway ${gId} successfully ended!`);
+
+  const info = new GiveawayInfo(jsonPath, {
+    giveaway_id: gId,
+    info: "winners",
+  });
+
+  console.log(`Winners: ${info.result}`);
+});
+
+monitor.start();
+```
+
+# Giveaway Giveaway ID From Interaction
+This can be used to obtain a giveaway id via interaction, e.g. with a button or select menu.
+```
+const { GiveawayIdFromInteraction } = require("discord-giveaways-s");
+
+let jsonPath = "giveaways.json";
+
+let interaction = interaction;
+
+const giveawayId = new GiveawayIdFromInteraction(jsonPath, {
+  interaction: interaction,
+});
+
+console.log(`Giveaway id: ${giveawayId.result}`);
+```
+
+# All Functions
+- GiveawayBuilder
+- GiveawayJoin
+- GiveawayLeave
+- GiveawayStart
+- GiveawayEnd
+- GiveawayDelete
+- GiveawayReroll
+- GiveawayInfo
+- GiveawayCheckMember
+- GiveawayIdFromInteraction
+- GiveawayMonitor
