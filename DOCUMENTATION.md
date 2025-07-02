@@ -3,6 +3,13 @@
 ![license](https://img.shields.io/npm/l/discord-giveaways-s)
 [![GitHub](https://img.shields.io/badge/GitHub-View-blue?logo=github)](https://github.com/DBM-POLSKA/discord-giveaways-s)
 
+
+## Table of Contents
+- [Giveaway Create & Delete](#giveaway-create--delete)
+- [Giveaway Join & Leave](#giveaway-join--leave)
+- [Giveaway Edit](#giveaway-edit)
+
+
 ## Giveaway Create & Delete
 ```js
 const { GiveawayCreate } = require("discord-giveaways-s");
@@ -189,20 +196,21 @@ const { GiveawayManualEnd } = require("discord-giveaways-s");
     GiveawayManualEnd({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
-      DrawWinner: true, // optional (default true)
+      drawWinner: true, // optional (default true)
       winnerCount: 1, // optional (default it takes the value from the json file)
     });
 ```
 
 ## Giveaway Auto End
 ```js
-const { GiveawayManualEnd } = require("discord-giveaways-s");
+const { GiveawayAutoEnd } = require("discord-giveaways-s");
 
     const giveawayChecker = GiveawayAutoEnd({
       storage: "./giveaways.json",
-      DrawWinner: true, // optional (default true)
+      drawWinner: true, // optional (default true)
       winnerCount: 1, // optional (default it takes the value from the json file)
       loopTime: 5, // optional (default 5) (here you set how often the json file should be checked for completed giveaways)
+      loopEvent: false, // optional (default true) (when true this event loops)
     });
 
     giveawayChecker.on("ended", (giveawayId) => {
