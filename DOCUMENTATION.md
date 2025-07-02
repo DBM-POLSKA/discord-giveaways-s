@@ -134,7 +134,7 @@ const { GiveawayExtend } = require("discord-giveaways-s");
     GiveawayExtend({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
-      time: "2years", // 1m / 1s / 1h / 1d / ...
+      time: "1h", // 1ms/1s/1m/1h/1d/...
     });
 ```
 
