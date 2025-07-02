@@ -7,7 +7,7 @@
 ```
 const { GiveawayCreate } = require("discord-giveaways-s");
 
-const giveawayId = GiveawayCreate({
+    const giveawayId = GiveawayCreate({
       storage: "./data/giveaways.json",
       config: {
         prize: "vip",
@@ -31,7 +31,7 @@ const giveawayId = GiveawayCreate({
 ```
 const { GiveawayDelete } = require("discord-giveaways-s");
 
-GiveawayDelete({
+    GiveawayDelete({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000", // "giveaway_id" or "all"
     });
@@ -41,7 +41,7 @@ GiveawayDelete({
 ```
 const { GiveawayJoin } = require("discord-giveaways-s");
 
-GiveawayJoin({
+    GiveawayJoin({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       memberId: "0000000000",
@@ -50,7 +50,7 @@ GiveawayJoin({
 ```
 const { GiveawayLeave } = require("discord-giveaways-s");
 
-GiveawayLeave({
+    GiveawayLeave({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       memberId: "0000000000",
@@ -61,7 +61,7 @@ GiveawayLeave({
 ```
 const { GiveawayEdit, GiveawayInfoFields } = require("discord-giveaways-s");
 
-GiveawayEdit({
+    GiveawayEdit({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       edit: {
@@ -75,7 +75,7 @@ GiveawayEdit({
 ```
 const { GiveawayCreateBackup } = require("discord-giveaways-s");
 
-GiveawayCreateBackup({
+    GiveawayCreateBackup({
       storage: "./data/giveaways.json",
       backupPath: "./data/backup/giveaways.json",
     });
@@ -83,7 +83,7 @@ GiveawayCreateBackup({
 ```
 const { GiveawayRestoreFromBackup } = require("discord-giveaways-s");
 
-GiveawayRestoreFromBackup({
+    GiveawayRestoreFromBackup({
       storage: "./data/giveaways.json",
       backupPath: "./data/backup/giveaways.json",
     });
@@ -93,7 +93,7 @@ GiveawayRestoreFromBackup({
 ```
 const { CheckIfMemberInGiveaway } = require("discord-giveaways-s");
 
-const isMemberInGiveaway = CheckIfMemberInGiveaway({
+    const isMemberInGiveaway = CheckIfMemberInGiveaway({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       memberId: "0000000000",
@@ -106,7 +106,7 @@ console.log(isMemberInGiveaway)
 ```
 const { GiveawayDrawWinner } = require("discord-giveaways-s");
 
-const winner = GiveawayDrawWinner({
+    const winner = GiveawayDrawWinner({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
     });
@@ -118,7 +118,7 @@ console.log(winner)
 ```
 const { GiveawayReroll } = require("discord-giveaways-s");
 
-const newWinner = GiveawayReroll({
+    const newWinner = GiveawayReroll({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       winnerCount: 1, // optional (default it takes the value from the json file)
@@ -131,7 +131,7 @@ console.log(newWinner)
 ```
 const { GiveawayExtend } = require("discord-giveaways-s");
 
-GiveawayExtend({
+    GiveawayExtend({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       time: "2years", // 1m / 1s / 1h / 1d / ...
@@ -142,7 +142,7 @@ GiveawayExtend({
 ```
 const { GiveawayInfo, GiveawayInfoFields } = require("discord-giveaways-s");
 
-const info = GiveawayInfo({
+    const info = GiveawayInfo({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       info: GiveawayInfoFields.PRIZE,
@@ -155,7 +155,7 @@ console.log(info)
 ```
 const { GiveawayChangeStatus, GiveawayStatusFields } = require("discord-giveaways-s");
 
-GiveawayChangeStatus({
+    GiveawayChangeStatus({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       newStatus: GiveawayStatusFields.PAUSED,
@@ -166,7 +166,7 @@ GiveawayChangeStatus({
 ```
 const { GetGiveawayIdFromMessage } = require("discord-giveaways-s");
 
-const giveawayId = GetGiveawayIdFromMessage({
+    const giveawayId = GetGiveawayIdFromMessage({
       storage: "./data/giveaways.json",
       messageId: "0000000000",
     });
@@ -176,7 +176,7 @@ const giveawayId = GetGiveawayIdFromMessage({
 ```
 const { GiveawayStart } = require("discord-giveaways-s");
 
-GiveawayStart({
+    GiveawayStart({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
     });
@@ -186,7 +186,7 @@ GiveawayStart({
 ```
 const { GiveawayManualEnd } = require("discord-giveaways-s");
 
-GiveawayManualEnd({
+    GiveawayManualEnd({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
       DrawWinner: true, // optional (default true)
@@ -198,18 +198,18 @@ GiveawayManualEnd({
 ```
 const { GiveawayManualEnd } = require("discord-giveaways-s");
 
-const giveawayChecker = GiveawayAutoEnd({
+    const giveawayChecker = GiveawayAutoEnd({
       storage: "./giveaways.json",
       DrawWinner: true, // optional (default true)
       winnerCount: 1, // optional (default it takes the value from the json file)
       loopTime: 5, // optional (default 5) (here you set how often the json file should be checked for completed giveaways)
     });
 
-giveawayChecker.on("ended", (giveawayId) => {
+    giveawayChecker.on("ended", (giveawayId) => {
       console.log("The giveaway has ended:", giveawayId);
     });
 
-giveawayChecker.on("error", (error) => {
+    giveawayChecker.on("error", (error) => {
       console.error(error);
     });
 ```
