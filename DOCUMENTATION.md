@@ -171,3 +171,25 @@ const giveawayId = GetGiveawayIdFromMessage({
       messageId: "0000000000",
     });
 ```
+
+## Giveaway Start
+```
+const { GiveawayStart } = require("discord-giveaways-s");
+
+GiveawayStart({
+      storage: "./data/giveaways.json",
+      giveawayId: "0000000000",
+    });
+```
+
+## Giveaway Manual End
+```
+const { GiveawayManualEnd } = require("discord-giveaways-s");
+
+GiveawayManualEnd({
+      storage: "./data/giveaways.json",
+      giveawayId: "0000000000",
+      DrawWinner: true, // optional (default true)
+      winnerCount: 1, // optional (default it takes the value from the json file)
+    });
+```
