@@ -101,3 +101,28 @@ const isMemberInGiveaway = CheckIfMemberInGiveaway({
 
 console.log(isMemberInGiveaway)
 ```
+
+## Giveaway Draw Winner
+```
+const { GiveawayDrawWinner } = require("discord-giveaways-s");
+
+const winner = GiveawayDrawWinner({
+      storage: "./data/giveaways.json",
+      giveawayId: "0000000000",
+    });
+
+console.log(winner)
+```
+
+## Giveaway Reroll
+```
+const { GiveawayReroll } = require("discord-giveaways-s");
+
+const newWinner = GiveawayReroll({
+      storage: "./data/giveaways.json",
+      giveawayId: "0000000000",
+      winnerCount: 1, // optional (default it takes the value from the json file)
+    });
+
+console.log(newWinner)
+```
