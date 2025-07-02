@@ -193,3 +193,23 @@ GiveawayManualEnd({
       winnerCount: 1, // optional (default it takes the value from the json file)
     });
 ```
+
+## Giveaway Auto End
+```
+const { GiveawayManualEnd } = require("discord-giveaways-s");
+
+const giveawayChecker = GiveawayAutoEnd({
+      storage: "./giveaways.json",
+      DrawWinner: true, // optional (default true)
+      winnerCount: 1, // optional (default it takes the value from the json file)
+      loopTime: 5, // optional (default 5) (here you set how often the json file should be checked for completed giveaways)
+    });
+
+giveawayChecker.on("ended", (giveawayId) => {
+      console.log("The giveaway has ended:", giveawayId);
+    });
+
+giveawayChecker.on("error", (error) => {
+      console.error(error);
+    });
+```
