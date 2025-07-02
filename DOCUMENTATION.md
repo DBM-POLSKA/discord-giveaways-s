@@ -4,7 +4,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-View-blue?logo=github)](https://github.com/DBM-POLSKA/discord-giveaways-s)
 
 ## Giveaway Create & Delete
-```
+```js
 const { GiveawayCreate } = require("discord-giveaways-s");
 
     const giveawayId = GiveawayCreate({
@@ -18,9 +18,9 @@ const { GiveawayCreate } = require("discord-giveaways-s");
         messageId: "0000000000", // Optional (it's worth filling out because it may be useful to obtain a giveaway ID)
         hostId: "0000000000", // Optional
         autoStart: true, // Optional (default true) (you can enter false and start the giveaway at another time)
-        description: gDescription, // Optional
-        minParticipants: gMinParticipants, // Optional (default 0)
-        maxParticipants: gMaxParticipants, // Optional (default unlimited)
+        description: "", // Optional
+        minParticipants: 1, // Optional (default 0)
+        maxParticipants: 50, // Optional (default unlimited)
         allowedRoles: [], // Optional
         allowedMembers: [], // Optional
         blacklistedRoles: [], // Optional
@@ -28,7 +28,7 @@ const { GiveawayCreate } = require("discord-giveaways-s");
       },
     });
 ```
-```
+```js
 const { GiveawayDelete } = require("discord-giveaways-s");
 
     GiveawayDelete({
@@ -38,7 +38,7 @@ const { GiveawayDelete } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Join & Leave
-```
+```js
 const { GiveawayJoin } = require("discord-giveaways-s");
 
     GiveawayJoin({
@@ -47,7 +47,7 @@ const { GiveawayJoin } = require("discord-giveaways-s");
       memberId: "0000000000",
     });
 ```
-```
+```js
 const { GiveawayLeave } = require("discord-giveaways-s");
 
     GiveawayLeave({
@@ -58,7 +58,7 @@ const { GiveawayLeave } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Edit
-```
+```js
 const { GiveawayEdit, GiveawayInfoFields } = require("discord-giveaways-s");
 
     GiveawayEdit({
@@ -72,7 +72,7 @@ const { GiveawayEdit, GiveawayInfoFields } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Create Backup & Restore From Backup
-```
+```js
 const { GiveawayCreateBackup } = require("discord-giveaways-s");
 
     GiveawayCreateBackup({
@@ -80,7 +80,7 @@ const { GiveawayCreateBackup } = require("discord-giveaways-s");
       backupPath: "./data/backup/giveaways.json",
     });
 ```
-```
+```js
 const { GiveawayRestoreFromBackup } = require("discord-giveaways-s");
 
     GiveawayRestoreFromBackup({
@@ -90,7 +90,7 @@ const { GiveawayRestoreFromBackup } = require("discord-giveaways-s");
 ```
 
 ## Check If Member In Giveaway
-```
+```js
 const { CheckIfMemberInGiveaway } = require("discord-giveaways-s");
 
     const isMemberInGiveaway = CheckIfMemberInGiveaway({
@@ -103,7 +103,7 @@ console.log(isMemberInGiveaway)
 ```
 
 ## Giveaway Draw Winner
-```
+```js
 const { GiveawayDrawWinner } = require("discord-giveaways-s");
 
     const winner = GiveawayDrawWinner({
@@ -115,7 +115,7 @@ console.log(winner)
 ```
 
 ## Giveaway Reroll
-```
+```js
 const { GiveawayReroll } = require("discord-giveaways-s");
 
     const newWinner = GiveawayReroll({
@@ -128,7 +128,7 @@ console.log(newWinner)
 ```
 
 ## Giveaway Extend
-```
+```js
 const { GiveawayExtend } = require("discord-giveaways-s");
 
     GiveawayExtend({
@@ -139,7 +139,7 @@ const { GiveawayExtend } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Info
-```
+```js
 const { GiveawayInfo, GiveawayInfoFields } = require("discord-giveaways-s");
 
     const info = GiveawayInfo({
@@ -152,7 +152,7 @@ console.log(info)
 ```
 
 ## Giveaway Change Status
-```
+```js
 const { GiveawayChangeStatus, GiveawayStatusFields } = require("discord-giveaways-s");
 
     GiveawayChangeStatus({
@@ -163,7 +163,7 @@ const { GiveawayChangeStatus, GiveawayStatusFields } = require("discord-giveaway
 ```
 
 ## Get Giveaway Id From Message
-```
+```js
 const { GetGiveawayIdFromMessage } = require("discord-giveaways-s");
 
     const giveawayId = GetGiveawayIdFromMessage({
@@ -173,7 +173,7 @@ const { GetGiveawayIdFromMessage } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Start
-```
+```js
 const { GiveawayStart } = require("discord-giveaways-s");
 
     GiveawayStart({
@@ -183,7 +183,7 @@ const { GiveawayStart } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Manual End
-```
+```js
 const { GiveawayManualEnd } = require("discord-giveaways-s");
 
     GiveawayManualEnd({
@@ -195,7 +195,7 @@ const { GiveawayManualEnd } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Auto End
-```
+```js
 const { GiveawayManualEnd } = require("discord-giveaways-s");
 
     const giveawayChecker = GiveawayAutoEnd({
