@@ -1,0 +1,46 @@
+{
+  "name": "discord-giveaways-s",
+  "author": "Shadow",
+  "discordAuthorId": "692734286276853760",
+  "discord": "https://discord.gg/9HYB4n3Dz4",
+  "description": "Advanced module for creating and managing giveaways in Discord bots.",
+  "main": "index.js",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DBM-POLSKA/discord-giveaways-s"
+  },
+  "bugs": {
+    "url": "https://discord.gg/9HYB4n3Dz4"
+  },
+  "homepage": "https://github.com/DBM-POLSKA/discord-giveaways-s#readme",
+  "keywords": [
+    "shadow",
+    "nodejs",
+    "npm",
+    "github",
+    "discord",
+    "discordjs",
+    "giveaway",
+    "giveaways",
+    "raffle",
+    "contests",
+    "bot",
+    "discord-bot",
+    "giveaway-manager",
+    "giveaway-bot",
+    "event",
+    "discord-api",
+    "discord-bot-module",
+    "bot-module",
+    "discord-giveaway",
+    "giveaway-system",
+    "prizes",
+    "discord-community",
+    "discord-giveaways-s"
+  ],
+  "engines": {
+    "node": ">=15.0.0"
+  }
+}
