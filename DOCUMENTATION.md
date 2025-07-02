@@ -8,6 +8,17 @@
 - [Giveaway Create & Delete](#giveaway-create--delete)
 - [Giveaway Join & Leave](#giveaway-join--leave)
 - [Giveaway Edit](#giveaway-edit)
+- [Giveaway Create Backup & Restore From Backup](#giveaway-create-backup--restore-from-backup)
+- [Check If Member In Giveaway](#check-if-member-in-giveaway)
+- [Giveaway Draw Winner](#giveaway-draw-winner)
+- [Giveaway Reroll](#giveaway-reroll)
+- [Giveaway Extend](#giveaway-extend)
+- [Giveaway Info](#giveaway-info)
+- [Giveaway Change Status](#giveaway-change-status)
+- [Get Giveaway Id From Message](#get-giveaway-id-from-message)
+- [Giveaway Start](#giveaway-start)
+- [Giveaway Manual End](#giveaway-manual-end)
+- [Giveaway Auto End](#giveaway-auto-end)
 
 
 ## Giveaway Create & Delete
