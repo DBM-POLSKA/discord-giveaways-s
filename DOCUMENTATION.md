@@ -89,16 +89,15 @@ GiveawayRestoreFromBackup({
     });
 ```
 
-## Giveaway Edit
+## Check If Member In Giveaway
 ```
-const { GiveawayEdit, GiveawayInfoFields } = require("discord-giveaways-s");
+const { CheckIfMemberInGiveaway } = require("discord-giveaways-s");
 
-GiveawayEdit({
+const isMemberInGiveaway = CheckIfMemberInGiveaway({
       storage: "./data/giveaways.json",
       giveawayId: "0000000000",
-      edit: {
-        [GiveawayInfoFields.PRIZE]: "beer",
-        ...
-      },
+      memberId: "0000000000",
     });
+
+console.log(isMemberInGiveaway)
 ```
