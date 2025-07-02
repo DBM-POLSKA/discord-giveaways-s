@@ -126,3 +126,48 @@ const newWinner = GiveawayReroll({
 
 console.log(newWinner)
 ```
+
+## Giveaway Extend
+```
+const { GiveawayExtend } = require("discord-giveaways-s");
+
+GiveawayExtend({
+      storage: "./data/giveaways.json",
+      giveawayId: "0000000000",
+      time: "2years", // 1m / 1s / 1h / 1d / ...
+    });
+```
+
+## Giveaway Info
+```
+const { GiveawayInfo, GiveawayInfoFields } = require("discord-giveaways-s");
+
+const info = GiveawayInfo({
+      storage: "./data/giveaways.json",
+      giveawayId: "0000000000",
+      info: GiveawayInfoFields.PRIZE,
+    });
+
+console.log(info)
+```
+
+## Giveaway Change Status
+```
+const { GiveawayChangeStatus, GiveawayStatusFields } = require("discord-giveaways-s");
+
+GiveawayChangeStatus({
+      storage: "./data/giveaways.json",
+      giveawayId: "0000000000",
+      newStatus: GiveawayStatusFields.PAUSED,
+    });
+```
+
+## Get Giveaway Id From Message
+```
+const { GetGiveawayIdFromMessage } = require("discord-giveaways-s");
+
+const giveawayId = GetGiveawayIdFromMessage({
+      storage: "./data/giveaways.json",
+      messageId: "0000000000",
+    });
+```
