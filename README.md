@@ -22,4 +22,4 @@ bun add discord-giveaways-s
 Full documentation is available in [DOCUMENTATION](https://github.com/DBM-POLSKA/discord-giveaways-s/blob/main/DOCUMENTATION.md)
 
 # 📝 License
-This project is licensed under the MIT License — see the [LICENSE](https://github.com/DBM-POLSKA/discord-giveaways-s/blob/main/LICENSE.md) file for details.
+This project is licensed under the MIT License — see the [LICENSE](https://github.com/DBM-POLSKA/discord-giveaways-s/blob/main/LICENSE) file for details.
