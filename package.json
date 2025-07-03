@@ -5,7 +5,7 @@
   "discord": "https://discord.gg/9HYB4n3Dz4",
   "description": "Advanced module for creating and managing giveaways in Discord bots.",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",

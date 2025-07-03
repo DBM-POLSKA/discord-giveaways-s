@@ -1,6 +1,6 @@
 <p align="center">
   <a title="discord-giveaways-s" href="https://www.npmjs.com/package/discord-giveaways-s" target="_blank">
-    <img src="https://media.discordapp.net/attachments/1301409004248891443/1384015200310788157/discord-giveaways-s.png?ex=6866a4d9&is=68655359&hm=a04e8565f79dcf1cec45a61af4a1cf58de532799d09ccb183328d0b949bd00b2&=&format=webp&quality=lossless" width="600" alt="discord-giveaways-s" />
+    <img src="https://media.discordapp.net/attachments/1301409004248891443/1390133942899970199/discord-giveaways-s.png?ex=6867269f&is=6865d51f&hm=de5675e7b04f63e90d7f53c80e1d79d3d7376f4b81c944991a21ea422a3e5708&=&format=webp&quality=lossless" width="600" alt="discord-giveaways-s" />
   </a>
 </p>
 
