@@ -22,7 +22,7 @@
 
 
 ## Giveaway Create & Delete
-Using this function you can create a giveaway, assign various information to it... (this function returns the giveaway id).
+With GiveawayCreate you can create a contest, assign various information to it... (this function returns the contest ID).
 ```js
 const { GiveawayCreate } = require("discord-giveaways-s");
 
@@ -47,7 +47,7 @@ const { GiveawayCreate } = require("discord-giveaways-s");
       },
     });
 ```
-Giveaway Delete allows you to delete a given giveaway and the information related to it (instead of the giveaway id you can enter "all", then all giveaways will be deleted).
+GiveawayDelete allows you to delete a given giveaway and the information related to it (instead of the giveaway id you can enter "all", then all giveaways will be deleted).
 ```js
 const { GiveawayDelete } = require("discord-giveaways-s");
 
