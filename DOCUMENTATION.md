@@ -22,6 +22,7 @@
 
 
 ## Giveaway Create & Delete
+Using this function you can create a giveaway, assign various information to it... (this function returns the giveaway id).
 ```js
 const { GiveawayCreate } = require("discord-giveaways-s");
 
@@ -46,6 +47,7 @@ const { GiveawayCreate } = require("discord-giveaways-s");
       },
     });
 ```
+Giveaway Delete allows you to delete a given giveaway and the information related to it (instead of the giveaway id you can enter "all", then all giveaways will be deleted).
 ```js
 const { GiveawayDelete } = require("discord-giveaways-s");
 
@@ -56,6 +58,7 @@ const { GiveawayDelete } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Join & Leave
+GiveawayJoin allows you to add a user (using their id) to a given giveaway.
 ```js
 const { GiveawayJoin } = require("discord-giveaways-s");
 
@@ -65,6 +68,7 @@ const { GiveawayJoin } = require("discord-giveaways-s");
       memberId: "0000000000",
     });
 ```
+GiveawayLeave allows a user to leave a selected giveaway via its giveaway id.
 ```js
 const { GiveawayLeave } = require("discord-giveaways-s");
 
@@ -76,6 +80,7 @@ const { GiveawayLeave } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Edit
+GiveawayEdit allows you to edit/add various information in the selected giveaway.
 ```js
 const { GiveawayEdit, GiveawayInfoFields } = require("discord-giveaways-s");
 
@@ -90,6 +95,7 @@ const { GiveawayEdit, GiveawayInfoFields } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Create Backup & Restore From Backup
+GiveawayCreateBackup is used to create a backup copy of the selected json file to a selected location.
 ```js
 const { GiveawayCreateBackup } = require("discord-giveaways-s");
 
@@ -98,6 +104,7 @@ const { GiveawayCreateBackup } = require("discord-giveaways-s");
       backupPath: "./data/backup/giveaways.json",
     });
 ```
+GiveawayRestoreFromBackup is used to restore a backup copy of a json file.
 ```js
 const { GiveawayRestoreFromBackup } = require("discord-giveaways-s");
 
@@ -108,6 +115,7 @@ const { GiveawayRestoreFromBackup } = require("discord-giveaways-s");
 ```
 
 ## Check If Member In Giveaway
+CheckIfMemberInGiveaway is used to check whether a given user is participating in a selected giveaway (returns true/false depending on whether the user is participating in the giveaway).
 ```js
 const { CheckIfMemberInGiveaway } = require("discord-giveaways-s");
 
@@ -121,6 +129,7 @@ console.log(isMemberInGiveaway)
 ```
 
 ## Giveaway Draw Winner
+GiveawayDrawWinner is used to manually draw winners from a selected giveaway.
 ```js
 const { GiveawayDrawWinner } = require("discord-giveaways-s");
 
@@ -133,6 +142,7 @@ console.log(winner)
 ```
 
 ## Giveaway Reroll
+GiveawayReroll is used to re-draw the giveaway winner, you can also set how many people are to be drawn.
 ```js
 const { GiveawayReroll } = require("discord-giveaways-s");
 
@@ -146,6 +156,7 @@ console.log(newWinner)
 ```
 
 ## Giveaway Extend
+With GiveawayExtend you can extend the duration of your giveaway.
 ```js
 const { GiveawayExtend } = require("discord-giveaways-s");
 
@@ -157,6 +168,7 @@ const { GiveawayExtend } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Info
+With GiveawayInfo you can retrieve various information from a selected giveaway, (GiveawayInfoField is here to help you with this).
 ```js
 const { GiveawayInfo, GiveawayInfoFields } = require("discord-giveaways-s");
 
@@ -170,6 +182,7 @@ console.log(info)
 ```
 
 ## Giveaway Change Status
+GiveawayChangeStatus is used to change the giveaway status (ended/running/waiting...), you can also make the configuration easier via GiveawayStatusFields.
 ```js
 const { GiveawayChangeStatus, GiveawayStatusFields } = require("discord-giveaways-s");
 
@@ -181,6 +194,7 @@ const { GiveawayChangeStatus, GiveawayStatusFields } = require("discord-giveaway
 ```
 
 ## Get Giveaway Id From Message
+Using GetGiveawayIdFromMessage you can retrieve the giveaway id via the message id assigned to that giveaway (this is useful when you don't have access to the giveaway id but you do have access to the message id).
 ```js
 const { GetGiveawayIdFromMessage } = require("discord-giveaways-s");
 
@@ -191,6 +205,7 @@ const { GetGiveawayIdFromMessage } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Start
+GiveawayStart allows you to manually start a selected giveaway.
 ```js
 const { GiveawayStart } = require("discord-giveaways-s");
 
@@ -201,6 +216,7 @@ const { GiveawayStart } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Manual End
+Using GiveawayManualEnd you can end your chosen giveaway and draw the winners at the same time.
 ```js
 const { GiveawayManualEnd } = require("discord-giveaways-s");
 
@@ -213,11 +229,12 @@ const { GiveawayManualEnd } = require("discord-giveaways-s");
 ```
 
 ## Giveaway Auto End
+GiveawayAutoEnd is an event that fires when a giveaway ends and executes the code and returns the ID of the giveaway that ended.
 ```js
 const { GiveawayAutoEnd } = require("discord-giveaways-s");
 
     const giveawayChecker = GiveawayAutoEnd({
-      storage: "./giveaways.json",
+      storage: "./data/giveaways.json",
       drawWinner: true, // optional (default true)
       winnerCount: 1, // optional (default it takes the value from the json file)
       loopTime: 5, // optional (default 5) (here you set how often the json file should be checked for completed giveaways)
