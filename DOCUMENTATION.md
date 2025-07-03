@@ -52,6 +52,13 @@ const giveawayId = GiveawayCreate({
     allowedMembers: [], // Optional
     blacklistedRoles: [], // Optional
     blacklistedMembers: [], // Optional
+    giveawayIdOptions: {
+      idLength: 20, // optional (default 10)
+      charset: "", // optional (default "0123456789")
+      prefix: "", // optional
+      suffix: "", // optional
+      separator: "", // optional
+    },
   },
 });
 ```

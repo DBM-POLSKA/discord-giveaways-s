@@ -22,7 +22,6 @@ const {
 const {
   GetGiveawayIdFromMessage,
 } = require("./lib/helpers/get_giveaway_id_from_message.js");
-
 const {
   CheckIfMemberInGiveaway,
 } = require("./lib/helpers/check_if_member_in_giveaway.js");
