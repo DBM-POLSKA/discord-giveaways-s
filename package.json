@@ -4,8 +4,14 @@
   "discordAuthorId": "692734286276853760",
   "discord": "https://discord.gg/9HYB4n3Dz4",
   "description": "Advanced module for creating and managing giveaways in Discord bots.",
-  "main": "index.js",
-  "version": "2.1.0",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./cjs/index.js"
+  },
+  "type": "commonjs",
+  "version": "2.1.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -50,6 +56,21 @@
     "node": ">=15.0.0"
   },
   "scripts": {
-    "test": "node tests/test.js"
-  }
+    "test": "node tests/test.js",
+    "test-000": "",
+    "test-esm": "node --input-type=module esm/index.js",
+    "convert-cjs-to-esm": "cjstoesm ./cjs ./esm"
+  },
+  "devDependencies": {
+    "cjstoesm": "^3.0.0"
+  },
+  "files": [
+    "cjs/",
+    "esm/",
+    "CHANGELOG.md",
+    "DOCUMENTATION.md",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ]
 }

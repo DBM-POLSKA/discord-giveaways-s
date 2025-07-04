@@ -16,7 +16,8 @@ Advanced module for creating and managing giveaways in Discord bots.
 ## ✨ Features
 
 - 🕐 **Easy to use** — _simple setup and integration._
-- 🎮 **Compatible with discord.js v13 and v14** — _modern library support._
+- ♻️ **CommonJS & ESM support** — _use it in both require-based and import-based projects._
+- 🎮 **Compatible with discord.js v13 & v14** — _modern library support._
 - ⚡ **Highly efficient** — _optimized for performance._
 - 🔄 **Persistent** — _Works after restarting the bot._
 - 🔥 **Powerful and flexible** — _create, start, reroll, edit, info, backup, extend..._
